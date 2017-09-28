@@ -1,6 +1,6 @@
 FROM trzeci/emscripten-slim:sdk-tag-1.37.21-64bit
 LABEL maintainer="mps299792458@gmail.com" \
-      version="0.1.0"
+      version="1.37.21"
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 15CF4D18AF4F7421 \
  && echo "deb http://apt.llvm.org/jessie/ llvm-toolchain-jessie-5.0 main" \
