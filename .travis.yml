@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - apt-cache madison docker-ce
+  - docker info
+  - docker build -t hrektts/rust-emscripten .
+
+script:
+  - docker run --rm -it hrektts/rust-emscripten rustc -vV
+  - docker run --rm -it hrektts/rust-emscripten cargo -vV
+  - docker run --rm -it hrektts/rust-emscripten emcc -v
+  - docker run --rm -it hrektts/rust-emscripten clang-5.0 -v
